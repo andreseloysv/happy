@@ -1,0 +1,86 @@
+#pacha{
+    background-image: url("../image/clubs/pacha/pacha-background.jpg");
+    background-size: cover;
+    background-position: 0px;
+}
+#space{
+    background-image: url("../image/clubs/space/space-background.jpg");
+    background-size: cover;
+    background-position: 0px;
+}
+.border-radius{
+    border-radius: 4px;
+}
+.club-container{
+    background-color: rgba(53, 53, 53, 0.48);
+    color: white;
+}
+.stars{
+    margin-top: 10px;
+    float: right;
+    top: 20px;
+    right: 22px;
+    width: 100px;
+    display: table-cell;
+    position: absolute;
+    text-align: right;
+}
+.media-heading {
+    margin-top: 15px;
+}
+.arrow-link{
+    vertical-align: middle;
+    display: table-cell;
+    width: 800px;
+    position: relative;
+    right: 10px;
+    text-align: right;
+}
+.arrow-circle{
+    background-color: rgba(36, 2, 2, 0.25);
+    border-radius: 16px;
+    width: 34px;
+    padding: 7px;
+    float: right;
+}
+.arrow-circle:hover{
+    background-color: rgba(0, 0, 0, 0.52);
+}
+.cover{
+    height: 350px;
+}
+
+@media (min-width: 1100px){
+    .cover{
+        height: 300px;
+    }
+}
+@media (min-width: 1200px){
+    .cover{
+        height: 320px;
+    }}
+@media (min-width: 1370px){
+    .cover{
+        height: 360px;
+    }}
+@media (min-width: 1450px){
+    .cover{
+        height: 380px;
+    }}
+@media (min-width: 1510px){
+    .cover{
+        height: 420px;
+    }}
+@media (min-width: 1670px){
+    .cover{
+        height: 460px;
+    }}
+@media (min-width: 1820px){
+    .cover{
+        height: 500px;
+    }}
+
+#div-profile-club-pic{
+    margin-top: -143px;
+    width: 300px
+}

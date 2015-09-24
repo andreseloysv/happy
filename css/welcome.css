@@ -1,0 +1,146 @@
+body{
+    background: url("../image/wallpaper/maxresdefault.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.container-welcome{
+    background-repeat: none;
+    background-color: #cccccc;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#top-banner{
+    background-color:white;
+    border-color:white;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    padding-bottom: 10px;
+}
+.banner-ico{
+    display: initial!important;
+    vertical-align: initial;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.message-ico{
+    float: right;
+    display: block!important;
+    height: auto!important;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.blur{
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(22px);
+    -o-filter: blur(22px);
+    -ms-filter: blur(22px);
+    filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 4px;
+    height: 100%;
+}
+
+.front-signin{
+    position: relative;
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px;
+}
+.front-signup{
+    position: relative;
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+
+front-page-photo-set .front-signin, .front-page-photo-set .front-signup {
+    border: 1px solid #e1e8ed;
+}
+.front-page-photo-set .front-signin {
+    background: white;
+    border: 1px solid #6fa3c4;
+    box-shadow: none;
+}
+.front-signup h2, .front-signin h2 {
+    border-bottom: 1px solid #e1e8ed;
+    box-shadow: 0 1px 0 #fff;
+    color: #66757f;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+.canvar-blur{
+    filter: blur(10px); 
+    -webkit-filter: blur(10px); 
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px); 
+    -ms-filter: blur(10px);
+}
+#container-blur{
+    padding-top: 50px;
+    text-align: center; 
+    margin: 0px auto;
+}
+#container-blur > div{
+    display: inline-table;
+}
+.front-card{
+    height: 400px
+}
+.front-welcome-text{
+    width: 450px;
+    text-align: left;
+    padding-right: 50px;
+}
+#login-form{
+    text-align: left;
+}
+.happy-button{
+        margin-left: 20px;
+    margin-top: -9px;
+    border-radius: 4px;
+    background-color: #e4002b;
+    color: white;
+    outline: none;
+    transition: background-color 333ms cubic-bezier(.215,.61,.355,1);
+}
+.happy-button:hover{
+    background-color: #D5032B;
+    color: white;
+    outline: none;
+}
+.js-front-signin{
+    margin-bottom: 20px;
+}
+.js-front-signup{
+    margin-bottom: 40px;
+}
+.signup-btn{
+    background-color: #00A2E4;
+    color: white;
+    font-weight: bolder;
+    outline: none;
+    transition: background-color 333ms cubic-bezier(.215,.61,.355,1);
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 46%;
+}
+.signup-btn:hover{
+    background-color: #e4002b;
+    color: white;
+    outline: none;
+    transition: background-color 333ms cubic-bezier(.215,.61,.355,1);
+}
+.form-control{
+    margin-bottom: 10px;
+}
+#result{
+        color: red;
+}
