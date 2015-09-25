@@ -1,4 +1,4 @@
-F<?php
+<?php
 include_once '/home/andreslaley/public_html/happy/controller/user/userController.php';
 include_once '/home/andreslaley/public_html/happy/controller/event/eventController.php';
 session_start();
@@ -60,8 +60,8 @@ $userController = new userController();
                 <div style="width: 243px">
                 </div>
             </div>
-            <div class="col-md-6 time-line-index">
-                <?php include_once 'getEvent.php'; ?>
+            <div class="col-md-6 time-line-index" id="list-event">
+                <?php //include_once 'getEvent.php'; ?>
             </div>
             <div class="col-md-2 event-panel-left">
                 <div class="panel panel-default">
@@ -169,6 +169,7 @@ $userController = new userController();
 <script type="text/javascript">
     $(document).ready(function () {
         searchBar();
+        listEvent();
         $("#imgInp").change(function () {
             readURL(this);
         });
@@ -177,15 +178,13 @@ $userController = new userController();
             createEvent();
         });
         displayMenu();
-        openEvent();
     });
-    
-    function openEvent(){
-        $('.media-event-list').on('click', function (event) {
-            var eventId=$($(this)[0]).data("id-event");
-            console.log(eventId);
-            window.location = "http://www.andreseloysv.com/happy/view/event/event.php?id="+eventId;
-        });
+
+    function openEvent(element) {
+        console.log($(element).data("id-event"));
+        var eventId = $(element).data("id-event");
+        console.log(eventId);
+        window.location = "http://www.andreseloysv.com/happy/view/event/event.php?id=" + eventId;
     }
 
     function uploadPicture() {
@@ -319,6 +318,16 @@ $userController = new userController();
             window.location.href = "http://www.andreseloysv.com/happy/view/event/event.php?id=" + data;
         });
         ;
+    }
+    function listEvent() {
+        $.getJSON("http://www.andreseloysv.com/happy/view/event/getEvent.php", function (json) {
+            var element = '<ul class="list-group">';
+            for (var i = 0; i < json.length; i++) {
+                element += '<li class="list-group-item media-event-list" data-id-event="' + json[i].id + '" onclick="openEvent(this);"><div class="media list-group-item no-border"><div class="media-left media-middle"><a href="#"><img class="media-object" src="../../image/event/' + json[i].photo + '" alt="..." height="80px" width="120px"></a></div><div class="media-body"><h4 class="media-heading">' + json[i].name + '</h4>' + json[i].date + '</div></div></li>';
+            }
+            element += '</ul>';
+            $("#list-event").append(element);
+        });
     }
 </script>
 </body>

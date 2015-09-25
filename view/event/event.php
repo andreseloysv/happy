@@ -216,26 +216,6 @@ if ($event->photo !== "") {
                     </div>
                 </div>
             </div>
-            <!--            <div class="col-md-2 event-panel-left">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <span class="description-featur">Distribute budget</span>
-                                </div>
-                                <div class="panel-body" style="text-align: left">
-                                    <div>
-            
-                                        <div class="dropdown">
-                                            <a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                <input type="text" class="form-control input" id="searchForGuests" name="searForGests" placeholder="Add friends to this event" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-1">
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-search" aria-labelledby="dLabel" id="searchForGestsList" style="display: none">
-                                            </ul>
-                                            <div id="result-invted-friend"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
         </div>
         <footer>
             <div class="container">
@@ -486,6 +466,12 @@ if ($event->photo !== "") {
                         function getItems() {
                             $.getJSON("http://www.andreseloysv.com/happy/view/product/getProduct.php", function (json) {
                                 console.log(json);
+                                var element = '<ul class="list-group product-list">';
+
+                                element += '<li class="list-group-item media-event-list" data-id-event="' + json.id + '" onclick="openEvent(this);"><div class="media list-group-item no-border"><div class="media-left media-middle"><a href="#"><img class="media-object" src="' + json.picture + '" alt="..." height="80px" width="120px"></a></div><div class="media-body"><h4 class="media-heading">' + json.name + '</h4>' + json.date_ini + '</div></div></li>';
+
+                                element += '</ul>';
+                                $("#inputSearchItem").after(element);
                             });
                         }
 </script>

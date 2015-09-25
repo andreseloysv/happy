@@ -160,3 +160,10 @@ guest-board{
 .event-mediaUserNameList{
     vertical-align: middle;
 }
+.product-list{
+    position: absolute;
+    width: 287px;
+}
+.search-input-product-list{
+    width: 200px;
+}

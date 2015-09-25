@@ -5,7 +5,6 @@ $user = $_SESSION["userSession"];
 if (is_null($user)) {
     return "error";
 }
-
 $productEventUserController = new productEventUserController();
 $searched_products = $productEventUserController->findProduct("id",1) ;
 if (is_null($searched_products)){

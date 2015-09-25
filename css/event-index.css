@@ -2,10 +2,10 @@
     padding-top: 144px;
 }
 .time-line-index{
-        margin-top: 0px;
+    margin-top: 0px;
 }
 #div-profile-pic{
-        margin-top: 0px;
+    margin-top: 0px;
 }
 .input-where{
     width: 40%;
@@ -15,4 +15,10 @@
 .event-modal-label{
     text-align: left!important;
     padding-left: 40px;
+}
+.no-border{
+    border: none;
+}
+.no-border:hover{
+    background-color: rgb(255, 254, 239);
 }

@@ -21,9 +21,9 @@ class eventController {
         $event->detail = $returnObject[0]["detail"];
         $event->id_autor = $returnObject[0]["id_autor"];
         if ($returnObject[0]["photo"] === "") {
-            $event->photo = "";
+            $event->photo = "defaul-evet.jpg";
         } else {
-            $event->photo = $returnObject[0]["photo"];
+            $event->photo = $event->id."/".$returnObject[0]["photo"];
         }
         return $event;
     }
@@ -41,9 +41,9 @@ class eventController {
             $event->detail = $returnObject[$index]["detail"];
             $event->id_autor = $returnObject[$index]["id_autor"];
             if ($returnObject[$index]["photo"] === "") {
-                $event->photo = "";
+                $event->photo = "defaul-evet.jpg";
             } else {
-                $event->photo = $returnObject[$index]["photo"];
+                $event->photo = $event->id."/".$returnObject[$index]["photo"];
             }
             array_push($events, $event);
         }
@@ -121,11 +121,10 @@ class eventController {
         public function getEvent($user_id) {
         $dao = new dao();
         try {
-            $query = "SELECT e.id,e.name,e.detail,e.location,e.photo,e.time,e.date FROM event as e, user as u, event_user as eu WHERE (eu.id_user='".$user_id."' and e.id=eu.id_event and u.id=eu.id_user ) or e.id_autor='".$user_id."'  order by e.date DESC limit 7 ";
+            $query = "SELECT DISTINCT e.id,e.name,e.detail,e.location,e.photo,e.time,e.date FROM event as e, user as u, event_user as eu WHERE (eu.id_user='".$user_id."' and e.id=eu.id_event and u.id=eu.id_user ) or e.id_autor='".$user_id."'  order by e.date DESC limit 7 ";
             $returnObject = $dao->genericQuery($query);
-            var_dump($query);
-            $this->addMultiData($returnObject);
-            //return $returnObject;
+            $returnObject=$this->addMultiData($returnObject);
+            return $returnObject;
 //            return $this->addPostData($returnObject);
         } catch (Exception $e) {
             throw new Exception("Failed geting the Posts, message: " . $e->getMessage());

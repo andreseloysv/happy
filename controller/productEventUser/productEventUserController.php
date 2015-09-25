@@ -48,6 +48,7 @@ class productEventUserController {
     public function findProduct($key, $value) {
         $productController = new productController();
         $productObject = $productController->findMe($key, $value);
+        return $productObject;
     }
 
     public function addMe($id_event, $id_product, $id_user, $date_ini) {
